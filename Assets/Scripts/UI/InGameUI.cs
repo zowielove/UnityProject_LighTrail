@@ -9,7 +9,7 @@ public class InGameUI : BaseUI
     {
         if (followTarget != null)
         {
-            transform.position = Camera.main.WorldToScreenPoint(followTarget.position) + followOffset;
+            //transform.position = Camera.main.WorldToScreenPoint(followTarget.position) + followOffset;
         }
     }
 
