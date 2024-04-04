@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float playerSpeed;
     [SerializeField] float changeTime;
-    [SerializeField] int jumpSpeed;
+    [SerializeField] float jumpSpeed;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Transform trans;
 
