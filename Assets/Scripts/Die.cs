@@ -18,7 +18,7 @@ public class Die : MonoBehaviour
     {
         if ( ( damageCheck.value & 1 << collision.gameObject.layer ) != 0 )
         {
-            Debug.Log("´ê¾Ò´Ù");
+            Debug.Log("ï¿½ï¿½Ò´ï¿½");
             //audio.Play();
             Died();
         }

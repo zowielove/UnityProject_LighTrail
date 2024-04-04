@@ -11,17 +11,17 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Tile_Normal
+  - Tile_LeftMove
+  - Tile_RightMove
+  - Tile_LeftTurn
+  - Tile_RightTurn
+  - Tile_Jump
+  - Tile_Damage
+  - Tile_LeftTurnJump
+  - Tile_RightTurnJump
+  - Monster
   - 
   - 
   - 
