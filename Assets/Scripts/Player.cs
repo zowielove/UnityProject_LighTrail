@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using DG.Tweening; //import
+using UnityEngine.Events; 
+using DG.Tweening;   //import
 
 public class Player : MonoBehaviour
 {
@@ -27,17 +28,19 @@ public class Player : MonoBehaviour
     private bool rightMove;
     private bool leftTurnJump;
     private bool rightTurnJump;
-    private bool jump;    
+    private bool jump;
+    private bool fall;
 
     [Header("Move")]
     private bool isActionInProgress = false;
     [SerializeField] float actionCoolTime;
 
+
     private void Update()
     {
         transform.localPosition += transform.forward * playerSpeed * Time.deltaTime;
     }
-
+   
     private void Action()
     {
         if ( isActionInProgress )
@@ -91,7 +94,11 @@ public class Player : MonoBehaviour
             velocity.y = jumpSpeed;
             rigid.velocity = velocity;
         }
-        
+        //else if ( fall == true )a
+        //{
+        //    Debug.Log("¶³¾îÁø´Ù");
+        //    Destroy(Collider collider);
+        //}
         StartCoroutine(ResetActionCooldown());
     }
 

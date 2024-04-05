@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Die : MonoBehaviour
 {
@@ -8,9 +9,15 @@ public class Die : MonoBehaviour
     [SerializeField] GameObject DieEffect;
     [SerializeField] AudioSource audio;
 
+    [Header("Events")]
+    public UnityEvent OnDied;
+
+
     private void Died()
     {
         GameObject deathEffect = Instantiate(DieEffect, transform.position, Quaternion.identity);
+
+        OnDied?.Invoke();
         Destroy(gameObject);
     }
 

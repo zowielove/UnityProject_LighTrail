@@ -12,6 +12,9 @@ public class TilePattern_Move : MonoBehaviour
 
     void Update()
     {
+        if ( playerTransform == null )
+            return;
+
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
         // 플레이어와 타일 사이의 거리가 일정 거리 내에 있을 때 타일 이동
