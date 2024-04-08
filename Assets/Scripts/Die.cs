@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Die : MonoBehaviour
 {
     [SerializeField] LayerMask damageCheck;
     [SerializeField] GameObject DieEffect;
-    [SerializeField] AudioSource audio;
+    [SerializeField] AudioSource DieSound;
+    [SerializeField] AudioSource BGM;
+    [ Header("Events")]
+    public UnityEvent OnDied;
+
 
     private void Died()
     {
         GameObject deathEffect = Instantiate(DieEffect, transform.position, Quaternion.identity);
+
+        OnDied?.Invoke();
         Destroy(gameObject);
     }
 
@@ -18,8 +25,9 @@ public class Die : MonoBehaviour
     {
         if ( ( damageCheck.value & 1 << collision.gameObject.layer ) != 0 )
         {
-            Debug.Log("��Ҵ�");
-            //audio.Play();
+            Debug.Log("Player Dead");
+            BGM.mute = true;
+            DieSound.Play();
             Died();
         }
     }
