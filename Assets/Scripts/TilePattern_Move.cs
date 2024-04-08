@@ -30,8 +30,8 @@ public class TilePattern_Move : MonoBehaviour
         {
             // 목적지까지의 방향 벡터 계산
             Vector3 direction = ( targetPosition.position - transform.position ).normalized;
-            // 타일을 목적지 방향으로 일정 속도로 이동
 
+            // 타일을 목적지 방향으로 일정 속도로 이동
             transform.position += direction * Time.deltaTime * 3f;
         }
         else

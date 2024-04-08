@@ -14,6 +14,7 @@ public class Tile : MonoBehaviour
 
     public bool play;
 
+
     private void OnTriggerEnter( Collider collision )
     {
         if ( ( layerMask.value & 1 << collision.gameObject.layer ) != 0 )
