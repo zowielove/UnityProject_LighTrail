@@ -5,11 +5,16 @@ using DG.Tweening; //import
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float playerSpeed;
+    [Header("Move")]
+    [SerializeField] public float playerSpeed;
+    public float additionalMoveSpeed;
     [SerializeField] float changeTime;
-    [SerializeField] int jumpSpeed;
+    [SerializeField] public int jumpSpeed;
+    public float additionalJumpSpeed;
     [SerializeField] Rigidbody rigid;
-    [SerializeField] Transform trans;
+    [SerializeField] Transform trans;    
+    private bool isActionInProgress = false;
+    [SerializeField] float actionCoolTime;
 
     [Header("Judgment")]
     [SerializeField] LayerMask leftTurnCheck;
@@ -27,15 +32,16 @@ public class Player : MonoBehaviour
     private bool rightMove;
     private bool leftTurnJump;
     private bool rightTurnJump;
-    private bool jump;    
+    private bool jump;
 
-    [Header("Move")]
-    private bool isActionInProgress = false;
-    [SerializeField] float actionCoolTime;
+    [Header("Sound")]
+    [SerializeField] AudioClip audiojump;
+    [SerializeField] AudioClip audiomove;
+    [SerializeField] AudioClip audioturn;  
 
     private void Update()
     {
-        transform.localPosition += transform.forward * playerSpeed * Time.deltaTime;
+        transform.localPosition += transform.forward * (playerSpeed + additionalMoveSpeed ) * Time.deltaTime;
     }
 
     private void Action()
@@ -48,29 +54,29 @@ public class Player : MonoBehaviour
 
         if ( leftTurn == true )
         {
-            Debug.Log("왼쪽턴");
+            Manager.Sound.PlaySFX(audioturn);
             trans.Rotate(0f, -90f, 0f, Space.Self);
         }
         else if ( rightTurn == true )
         {
-            Debug.Log("오른쪽턴");
+            Manager.Sound.PlaySFX(audioturn);
             trans.Rotate(0f, +90f, 0f, Space.Self);
         }
         else if ( leftMove == true )
         {
-            Debug.Log("왼쪽이동");
+            Manager.Sound.PlaySFX(audiomove);
             transform.DOMove(currentPosition - trans.right + trans.forward * 0.3f, 0.15f, false);
 
         }
         else if ( rightMove == true )
         {
-            Debug.Log("오른쪽이동");
+            Manager.Sound.PlaySFX(audiomove);
             transform.DOMove(currentPosition + trans.right + trans.forward * 0.3f, 0.15f, false);
 
         }
         else if ( leftTurnJump == true )
         {
-            Debug.Log("왼쪽으로점프");
+            Manager.Sound.PlaySFX(audiojump);
             trans.Rotate(0f, -90f, 0f, Space.Self);
             Vector2 velocity = rigid.velocity;
             velocity.y = jumpSpeed;
@@ -78,7 +84,7 @@ public class Player : MonoBehaviour
         }
         else if ( rightTurnJump == true )
         {
-            Debug.Log("오른쪽으로점프");
+            Manager.Sound.PlaySFX(audiojump);
             trans.Rotate(0f, +90f, 0f, Space.Self);
             Vector2 velocity = rigid.velocity;
             velocity.y = jumpSpeed;
@@ -87,8 +93,9 @@ public class Player : MonoBehaviour
         else if ( jump == true )
         {
             Debug.Log("점프");
+            Manager.Sound.PlaySFX(audiojump);
             Vector2 velocity = rigid.velocity;
-            velocity.y = jumpSpeed;
+            velocity.y = jumpSpeed+ additionalJumpSpeed;
             rigid.velocity = velocity;
         }
         
