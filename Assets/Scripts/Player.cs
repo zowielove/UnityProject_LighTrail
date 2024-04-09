@@ -6,6 +6,7 @@ using DG.Tweening; //import
 public class Player : MonoBehaviour
 {
     [SerializeField] float playerSpeed;
+    public float additionalSpeed;
     [SerializeField] float changeTime;
     [SerializeField] int jumpSpeed;
     [SerializeField] Rigidbody rigid;
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        transform.localPosition += transform.forward * playerSpeed * Time.deltaTime;
+        transform.localPosition += transform.forward * (playerSpeed + additionalSpeed) * Time.deltaTime;
     }
 
     private void Action()
