@@ -5,10 +5,11 @@ using DG.Tweening; //import
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float playerSpeed;
-    public float additionalSpeed;
+    [SerializeField] public float playerSpeed;
+    public float additionalMoveSpeed;
     [SerializeField] float changeTime;
-    [SerializeField] int jumpSpeed;
+    [SerializeField] public int jumpSpeed;
+    public float additionalJumpSpeed;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Transform trans;
 
@@ -34,9 +35,13 @@ public class Player : MonoBehaviour
     private bool isActionInProgress = false;
     [SerializeField] float actionCoolTime;
 
+    //[Header("Sound")]
+    [SerializeField] 
+
+
     private void Update()
     {
-        transform.localPosition += transform.forward * (playerSpeed + additionalSpeed) * Time.deltaTime;
+        transform.localPosition += transform.forward * (playerSpeed + additionalMoveSpeed ) * Time.deltaTime;
     }
 
     private void Action()
@@ -89,7 +94,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("มกวม");
             Vector2 velocity = rigid.velocity;
-            velocity.y = jumpSpeed;
+            velocity.y = jumpSpeed+ additionalJumpSpeed;
             rigid.velocity = velocity;
         }
         

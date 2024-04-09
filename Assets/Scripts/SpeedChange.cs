@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpeedChange : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeedChange;
+    [SerializeField] float jumpSpeedChange;
     [SerializeField] LayerMask playerCheck;
 
     private bool speedUp;
@@ -23,26 +24,10 @@ public class SpeedChange : MonoBehaviour
                 Player playerScript = collision.GetComponent<Player>();
                 if ( playerScript != null )
                 {
-                    playerScript.additionalSpeed = moveSpeed;                }
-            }
-        }
-    }
-
-    private void OnTriggerExit( Collider collision )
-    {
-        if ( playerCheck.Contain(collision.gameObject.layer) )
-        {
-            speedUp = false;
-            playerCount--;
-            speedUp = playerCount > 0;
-            if ( speedUp )
-            {
-                Player playerScript = collision.GetComponent<Player>();
-                if ( playerScript != null )
-                {
-                    playerScript.additionalSpeed = 0;
+                    playerScript.additionalMoveSpeed = moveSpeedChange;
+                    playerScript.additionalJumpSpeed = jumpSpeedChange;
                 }
             }
         }
-    }
+    }    
 }
