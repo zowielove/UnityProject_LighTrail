@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] Transform trans;    
     private bool isActionInProgress = false;
     [SerializeField] float actionCoolTime;
+    
+
 
     [Header("Judgment")]
     [SerializeField] LayerMask leftTurnCheck;
