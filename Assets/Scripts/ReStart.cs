@@ -16,7 +16,7 @@ public class ReStart : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1.5f);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Test_JB");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Tropical");
 
     }
 }
