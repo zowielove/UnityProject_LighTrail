@@ -1,16 +1,20 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Events; 
-using DG.Tweening;   //import
+using DG.Tweening; //import
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float playerSpeed;
+    [Header("Move")]
+    [SerializeField] public float playerSpeed;
+    public float additionalMoveSpeed;
     [SerializeField] float changeTime;
-    [SerializeField] float jumpSpeed;
+    [SerializeField] public int jumpSpeed;
+    public float additionalJumpSpeed;
     [SerializeField] Rigidbody rigid;
     [SerializeField] Transform trans;
+    private bool isActionInProgress = false;
+    [SerializeField] float actionCoolTime;
 
     [Header("Judgment")]
     [SerializeField] LayerMask leftTurnCheck;
@@ -21,7 +25,7 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask leftTurnJumpCheck;
     [SerializeField] LayerMask rightTurnJumpCheck;
     [SerializeField] LayerMask damageCheck;
-    
+
     private bool leftTurn;
     private bool leftMove;
     private bool rightTurn;
@@ -29,18 +33,17 @@ public class Player : MonoBehaviour
     private bool leftTurnJump;
     private bool rightTurnJump;
     private bool jump;
-    private bool fall;
 
-    [Header("Move")]
-    private bool isActionInProgress = false;
-    [SerializeField] float actionCoolTime;
-
+    [Header("Sound")]
+    [SerializeField] AudioClip audiojump;
+    [SerializeField] AudioClip audiomove;
+    [SerializeField] AudioClip audioturn;
 
     private void Update()
     {
-        transform.localPosition += transform.forward * playerSpeed * Time.deltaTime;
+        transform.localPosition += transform.forward * ( playerSpeed + additionalMoveSpeed ) * Time.deltaTime;
     }
-   
+
     private void Action()
     {
         if ( isActionInProgress )
@@ -51,29 +54,29 @@ public class Player : MonoBehaviour
 
         if ( leftTurn == true )
         {
-            Debug.Log("왼쪽턴");
+            Manager.Sound.PlaySFX(audioturn);
             trans.Rotate(0f, -90f, 0f, Space.Self);
         }
         else if ( rightTurn == true )
         {
-            Debug.Log("오른쪽턴");
+            Manager.Sound.PlaySFX(audioturn);
             trans.Rotate(0f, +90f, 0f, Space.Self);
         }
         else if ( leftMove == true )
         {
-            Debug.Log("왼쪽이동");
+            Manager.Sound.PlaySFX(audiomove);
             transform.DOMove(currentPosition - trans.right + trans.forward * 0.3f, 0.15f, false);
 
         }
         else if ( rightMove == true )
         {
-            Debug.Log("오른쪽이동");
+            Manager.Sound.PlaySFX(audiomove);
             transform.DOMove(currentPosition + trans.right + trans.forward * 0.3f, 0.15f, false);
 
         }
         else if ( leftTurnJump == true )
         {
-            Debug.Log("왼쪽으로점프");
+            Manager.Sound.PlaySFX(audiojump);
             trans.Rotate(0f, -90f, 0f, Space.Self);
             Vector2 velocity = rigid.velocity;
             velocity.y = jumpSpeed;
@@ -81,7 +84,7 @@ public class Player : MonoBehaviour
         }
         else if ( rightTurnJump == true )
         {
-            Debug.Log("오른쪽으로점프");
+            Manager.Sound.PlaySFX(audiojump);
             trans.Rotate(0f, +90f, 0f, Space.Self);
             Vector2 velocity = rigid.velocity;
             velocity.y = jumpSpeed;
@@ -90,15 +93,12 @@ public class Player : MonoBehaviour
         else if ( jump == true )
         {
             Debug.Log("점프");
+            Manager.Sound.PlaySFX(audiojump);
             Vector2 velocity = rigid.velocity;
-            velocity.y = jumpSpeed;
+            velocity.y = jumpSpeed+ additionalJumpSpeed;
             rigid.velocity = velocity;
         }
-        //else if ( fall == true )a
-        //{
-        //    Debug.Log("떨어진다");
-        //    Destroy(Collider collider);
-        //}
+
         StartCoroutine(ResetActionCooldown());
     }
 
@@ -113,68 +113,116 @@ public class Player : MonoBehaviour
         isActionInProgress = false;
     }
 
-    
+    private int leftMoveCount;
+    private int rightMoveCount;
+    private int leftTurnCount;
+    private int rightTrunCount;
+    private int jumpCount;
+    private int leftTurnJumpCount;
+    private int rightTurnJumpCount;
+
+
 
     private void OnTriggerEnter( Collider collision )
     {
-        if ( ( leftMoveCheck.value & 1 << collision.gameObject.layer ) != 0 )
+        if ( leftMoveCheck.Contain(collision.gameObject.layer) )
         {
             leftMove = true;
+            leftMoveCount++;
+            leftMove = leftMoveCount > 0;
         }
-        if ( ( rightMoveCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( rightMoveCheck.Contain(collision.gameObject.layer) )
         {
             rightMove = true;
+            rightMoveCount++;
+            rightMove = rightMoveCount > 0;
         }
-        if ( ( jumpCheck.value & 1 << collision.gameObject.layer ) != 0 )
-        {
-            jump = true;
-        }
-        if ( ( leftTurnCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( leftTurnCheck.Contain(collision.gameObject.layer) )
         {
             leftTurn = true;
+            leftTurnCount++;
+            leftTurn = leftTurnCount > 0;
         }
-        if ( ( rightTurnCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( rightTurnCheck.Contain(collision.gameObject.layer) )
         {
             rightTurn = true;
+            rightTrunCount++;
+            rightTurn = rightTrunCount > 0;
         }
-        if ( ( leftTurnJumpCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( jumpCheck.Contain(collision.gameObject.layer) )
+        {
+            jump = true;
+            jumpCount++;
+            jump = jumpCount > 0;
+        }
+
+        if ( leftTurnJumpCheck.Contain(collision.gameObject.layer) )
         {
             leftTurnJump = true;
+            leftTurnJumpCount++;
+            leftTurnJump = leftTurnJumpCount > 0;
         }
-        if ( ( rightTurnJumpCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( rightTurnJumpCheck.Contain(collision.gameObject.layer) )
         {
             rightTurnJump = true;
-        }        
+            rightTurnJumpCount++;
+            rightTurnJump = rightTurnJumpCount > 0;
+        }
     }
     private void OnTriggerExit( Collider collision )
     {
-        if ( ( leftMoveCheck.value & 1 << collision.gameObject.layer ) != 0 )
+        if ( leftMoveCheck.Contain(collision.gameObject.layer) )
         {
             leftMove = false;
+            leftMoveCount--;
+            leftMove = leftMoveCount > 0;
         }
-        if ( ( rightMoveCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( rightMoveCheck.Contain(collision.gameObject.layer) )
         {
             rightMove = false;
+            rightMoveCount--;
+            rightMove = rightMoveCount > 0;
         }
-        if ( ( jumpCheck.value & 1 << collision.gameObject.layer ) != 0 )
-        {
-            jump = false;
-        }
-        if ( ( leftTurnCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( leftTurnCheck.Contain(collision.gameObject.layer) )
         {
             leftTurn = false;
+            leftTurnCount--;
+            leftTurn = leftTurnCount > 0;
         }
-        if ( ( leftTurnJumpCheck.value & 1 << collision.gameObject.layer ) != 0 )
-        {
-            leftTurnJump = false;
-        }
-        if ( ( rightTurnJumpCheck.value & 1 << collision.gameObject.layer ) != 0 )
-        {
-            rightTurnJump = false;
-        }
-        if ( ( rightTurnCheck.value & 1 << collision.gameObject.layer ) != 0 )
+
+        if ( rightTurnCheck.Contain(collision.gameObject.layer) )
         {
             rightTurn = false;
+            rightTrunCount--;
+            rightTurn = rightTrunCount > 0;
+        }
+
+        if ( jumpCheck.Contain(collision.gameObject.layer) )
+        {
+            jump = false;
+            jumpCount--;
+            jump = jumpCount > 0;
+        }
+
+        if ( leftTurnJumpCheck.Contain(collision.gameObject.layer) )
+        {
+            leftTurnJump = false;
+            leftTurnJumpCount--;
+            leftTurnJump = leftTurnJumpCount > 0;
+        }
+
+        if ( rightTurnJumpCheck.Contain(collision.gameObject.layer) )
+        {
+            rightTurnJump = false;
+            rightTurnJumpCount--;
+            rightTurnJump = rightTurnJumpCount > 0;
         }
     }
 }

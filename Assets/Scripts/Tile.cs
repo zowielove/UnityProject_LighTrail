@@ -25,7 +25,7 @@ public class Tile : MonoBehaviour
             {
                 rendererToChangeMaterial.material = material;
             }
-                collider.size = new Vector3(5f , 0.5f, 5f);
+
         }       
     }
 
