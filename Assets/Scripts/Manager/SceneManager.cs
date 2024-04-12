@@ -13,7 +13,7 @@ public class SceneManager : Singleton<SceneManager>
 
     public BaseScene GetCurScene()
     {
-        if (curScene == null)
+        if ( curScene == null )
         {
             curScene = FindObjectOfType<BaseScene>();
         }
@@ -22,21 +22,20 @@ public class SceneManager : Singleton<SceneManager>
 
     public T GetCurScene<T>() where T : BaseScene
     {
-        if (curScene == null)
+        if ( curScene == null )
         {
             curScene = FindObjectOfType<BaseScene>();
         }
         return curScene as T;
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene( string sceneName )
     {
         StartCoroutine(LoadingRoutine(sceneName));
     }
 
-    IEnumerator LoadingRoutine(string sceneName)
+    IEnumerator LoadingRoutine( string sceneName )
     {
-        fade.gameObject.SetActive(true);
         yield return FadeOut();
 
         Manager.Pool.ClearPool();
@@ -46,10 +45,10 @@ public class SceneManager : Singleton<SceneManager>
         Manager.UI.CloseInGameUI();
 
         Time.timeScale = 0f;
-        loadingBar.gameObject.SetActive(true);
+        //loadingBar.gameObject.SetActive(true);
 
         AsyncOperation oper = UnitySceneManager.LoadSceneAsync(sceneName);
-        while (oper.isDone == false)
+        while ( oper.isDone == false )
         {
             loadingBar.value = oper.progress;
             yield return null;
@@ -58,13 +57,12 @@ public class SceneManager : Singleton<SceneManager>
         Manager.UI.EnsureEventSystem();
 
         BaseScene curScene = GetCurScene();
-        yield return curScene.LoadingRoutine();
+        //yield return curScene.LoadingRoutine();
 
-        loadingBar.gameObject.SetActive(false);
+        //loadingBar.gameObject.SetActive(false);
         Time.timeScale = 1f;
 
         yield return FadeIn();
-        fade.gameObject.SetActive(false);
     }
 
     IEnumerator FadeOut()
@@ -73,7 +71,7 @@ public class SceneManager : Singleton<SceneManager>
         Color fadeOutColor = new Color(fade.color.r, fade.color.g, fade.color.b, 1f);
         Color fadeInColor = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
 
-        while (rate <= 1)
+        while ( rate <= 1 )
         {
             rate += Time.deltaTime / fadeTime;
             fade.color = Color.Lerp(fadeInColor, fadeOutColor, rate);
@@ -87,7 +85,7 @@ public class SceneManager : Singleton<SceneManager>
         Color fadeOutColor = new Color(fade.color.r, fade.color.g, fade.color.b, 1f);
         Color fadeInColor = new Color(fade.color.r, fade.color.g, fade.color.b, 0f);
 
-        while (rate <= 1)
+        while ( rate <= 1 )
         {
             rate += Time.deltaTime / fadeTime;
             fade.color = Color.Lerp(fadeOutColor, fadeInColor, rate);
