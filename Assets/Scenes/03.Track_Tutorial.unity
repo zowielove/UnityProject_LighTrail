@@ -13109,12 +13109,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   DieEffect: {fileID: 737044228570781640, guid: 25d69e576cde76f4a8c64b519f260816, type: 3}
-  audioDie: {fileID: 0}
+  DieSound: {fileID: 0}
   BGM: {fileID: 0}
   OnDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1963949433}
+      - m_Target: {fileID: 1963949435}
         m_TargetAssemblyTypeName: ReStart, Assembly-CSharp
         m_MethodName: GameSceneLoad
         m_Mode: 1
@@ -17047,7 +17047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1963949434}
-  - component: {fileID: 1963949433}
+  - component: {fileID: 1963949435}
   m_Layer: 0
   m_Name: Restarter
   m_TagString: Untagged
@@ -17055,19 +17055,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1963949433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963949432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 389490edbabf8aa45b289b11143af779, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Track_Name: 03.Track_Tutorial
 --- !u!4 &1963949434
 Transform:
   m_ObjectHideFlags: 0
@@ -17083,6 +17070,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1963949435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963949432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7d098a58cd2284f92a636456d73433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Track_Name: 03.Track_Tutorial
 --- !u!1001 &1964107761
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/03.Track_NeonSign.unity
     guid: 8c725a9c2b4da174080303867b928ba3
+  - enabled: 1
+    path: Assets/Scenes/03.Track_Tropical.unity
+    guid: 393881fe58155c24db9bd1cfa8152955
   m_configObjects: {}
