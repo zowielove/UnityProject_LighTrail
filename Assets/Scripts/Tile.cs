@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
@@ -8,6 +9,7 @@ public class Tile : MonoBehaviour
     [SerializeField] Renderer rendererToChangeMaterial;
     [SerializeField] BoxCollider collider;
     [SerializeField] Material material;
+    [SerializeField] GameObject del;
     
 
     private Vector3 initialColliderPosition;
@@ -32,7 +34,14 @@ public class Tile : MonoBehaviour
     private void OnTriggerExit( Collider collision )
     {
 
-    }
+        if ( ( layerMask.value & 1 << collision.gameObject.layer ) != 0 )
+        {
 
+            if ( del != null )
+            {
+                del.SetActive(false);
+            }
+        }
+    }
 }
 

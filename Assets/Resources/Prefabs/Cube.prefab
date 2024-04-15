@@ -207,6 +207,7 @@ MonoBehaviour:
   rendererToChangeMaterial: {fileID: 8542153377325876178}
   collider: {fileID: 8387318592689328188}
   material: {fileID: 2100000, guid: f8166a4bd5df1a34281551da46c92305, type: 2}
+  del: {fileID: 6998208037410999657, guid: 981744398f95e1e43858936cda283c98, type: 3}
   play: 0
 --- !u!1 &4771349483120973301
 GameObject:

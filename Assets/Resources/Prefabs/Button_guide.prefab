@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2710036116200024717}
   - component: {fileID: 6599413711706046146}
   - component: {fileID: 5093265712488362228}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3664510266210518466}
   - component: {fileID: 4253883644520704333}
   - component: {fileID: 2205327006617406782}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 9097313164025013555}
   - component: {fileID: 9142020828362154506}
   - component: {fileID: 4336989239603017140}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5033,13 +5033,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6771369710749317640}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button_guide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6771369710749317640
 Transform:
   m_ObjectHideFlags: 0
