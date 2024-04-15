@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2487035091813101828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,7 +51,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.2, z: 1}
+  m_Size: {x: 1, y: 0.07, z: 1}
   m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &2666928806973593782
 GameObject:
@@ -207,6 +207,7 @@ MonoBehaviour:
   rendererToChangeMaterial: {fileID: 8542153377325876178}
   collder: {fileID: 2959920900811944336}
   material: {fileID: 2100000, guid: cfb51de31df34024dbd6b6264cc4b3a5, type: 2}
+  damage: {fileID: 8387318592689328188}
   play: 0
 --- !u!1 &4771349483120973301
 GameObject:
@@ -259,5 +260,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.62, z: 1}
-  m_Center: {x: 0, y: -0.1, z: 0}
+  m_Size: {x: 1, y: 0.87, z: 1}
+  m_Center: {x: 0, y: -0.01, z: 0}
