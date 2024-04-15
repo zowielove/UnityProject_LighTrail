@@ -67,9 +67,9 @@ GameObject:
   - component: {fileID: 8165573697534111650}
   - component: {fileID: 8931488194636108985}
   - component: {fileID: 6511778230809000218}
-  - component: {fileID: 3225904759457086196}
+  - component: {fileID: 2223404799722157035}
   m_Layer: 7
-  m_Name: Cube 1
+  m_Name: Tutorial_Cube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,10 +206,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rendererToChangeMaterial: {fileID: 4858975213390801781}
-  collider: {fileID: 6003936788121187400}
-  material: {fileID: 2100000, guid: f8166a4bd5df1a34281551da46c92305, type: 2}
+  collder: {fileID: 0}
+  material: {fileID: 2100000, guid: a198b55139442f648ac3978826c1a1a3, type: 2}
   play: 0
---- !u!114 &3225904759457086196
+--- !u!114 &2223404799722157035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,10 +218,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4341408966512523055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ed5bb447363c67498907e8bdb571a8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 244187dbe97e09648b9a3fa0b76d53bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: {fileID: 8300000, guid: b14c5eb6e41d19d499da4d88a5d27042, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  del: {fileID: 6998208037410999657, guid: 981744398f95e1e43858936cda283c98, type: 3}
 --- !u!1 &5958783631401525794
 GameObject:
   m_ObjectHideFlags: 0

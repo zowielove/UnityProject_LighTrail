@@ -67,8 +67,9 @@ GameObject:
   - component: {fileID: 2959920900811944336}
   - component: {fileID: 6595790441534301285}
   - component: {fileID: 2926293651609823552}
+  - component: {fileID: 6924581960444735383}
   m_Layer: 7
-  m_Name: Cube
+  m_Name: Tutorial_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,8 +207,24 @@ MonoBehaviour:
     m_Bits: 64
   rendererToChangeMaterial: {fileID: 8542153377325876178}
   collder: {fileID: 2959920900811944336}
-  material: {fileID: 2100000, guid: cfb51de31df34024dbd6b6264cc4b3a5, type: 2}
+  material: {fileID: 2100000, guid: f8166a4bd5df1a34281551da46c92305, type: 2}
   play: 0
+--- !u!114 &6924581960444735383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666928806973593782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244187dbe97e09648b9a3fa0b76d53bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  del: {fileID: 6998208037410999657, guid: 981744398f95e1e43858936cda283c98, type: 3}
 --- !u!1 &4771349483120973301
 GameObject:
   m_ObjectHideFlags: 0
