@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/02.StageSelect.unity
     guid: 160fa74b626d1a146bc81087ba338288
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_JB.unity
     guid: dc17882497f70e848a7b87ebca2fe986
+  - enabled: 1
+    path: Assets/Scenes/03.Track_Tutorial.unity
+    guid: 1e0b7ead33262394ab7b086e22f6654c
+  - enabled: 1
+    path: Assets/Scenes/03.Track_NeonSign.unity
+    guid: 8c725a9c2b4da174080303867b928ba3
   m_configObjects: {}

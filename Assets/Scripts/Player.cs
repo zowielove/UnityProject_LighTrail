@@ -15,8 +15,6 @@ public class Player : MonoBehaviour
     [SerializeField] Transform trans;    
     private bool isActionInProgress = false;
     [SerializeField] float actionCoolTime;
-    
-
 
     [Header("Judgment")]
     [SerializeField] LayerMask leftTurnCheck;
@@ -49,7 +47,7 @@ public class Player : MonoBehaviour
     private void Action()
     {
         if ( isActionInProgress )
-            return; // ÀÌ¹Ì µ¿ÀÛ ÁßÀÌ¸é ¹«½Ã
+            return; // ì´ë¯¸ ë™ì‘ ì¤‘ì´ë©´ ë¬´ì‹œ
 
         isActionInProgress = true;
         Vector3 currentPosition = trans.position;
@@ -94,7 +92,7 @@ public class Player : MonoBehaviour
         }
         else if ( jump == true )
         {
-            Debug.Log("Á¡ÇÁ");
+            Debug.Log("ì í”„");
             Manager.Sound.PlaySFX(audiojump);
             Vector2 velocity = rigid.velocity;
             velocity.y = jumpSpeed+ additionalJumpSpeed;

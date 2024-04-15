@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8379578638424017857}
   - component: {fileID: 7442701856252127272}
   - component: {fileID: 1301822112036481232}
+  - component: {fileID: 7890613670484934627}
   - component: {fileID: 2563105709361889242}
   m_Layer: 6
   m_Name: Player
@@ -205,6 +206,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5, y: 0.5, z: 1.17}
   m_Center: {x: 0, y: -0.4, z: 0}
+--- !u!114 &7890613670484934627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4653473014556682132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c2285077a30d14986367fa51deff6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageCheck:
+    serializedVersion: 2
+    m_Bits: 0
+  DieEffect: {fileID: 737044228570781640, guid: 25d69e576cde76f4a8c64b519f260816, type: 3}
+  audio: {fileID: 0}
 --- !u!54 &2563105709361889242
 Rigidbody:
   m_ObjectHideFlags: 0

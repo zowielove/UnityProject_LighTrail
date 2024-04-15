@@ -808,6 +808,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1942803655}
     m_Modifications:
+    - target: {fileID: 2089495368989826400, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
+      propertyPath: stage1
+      value: 03.Track_Tutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 2423867022906349617, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
       propertyPath: m_Name
       value: Track
@@ -1151,9 +1155,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1942803655}
     m_Modifications:
+    - target: {fileID: 2089495368989826400, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
+      propertyPath: stage2
+      value: 03.Track_NeonSign
+      objectReference: {fileID: 0}
     - target: {fileID: 2423867022906349617, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
       propertyPath: m_Name
       value: Track (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128515464942508540, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Stage2_SceneLoad
       objectReference: {fileID: 0}
     - target: {fileID: 3133587003422322024, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
       propertyPath: m_Pivot.x

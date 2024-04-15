@@ -6,14 +6,10 @@ using UnityEngine;
 
 public class ReStart : MonoBehaviour
 {
-    [SerializeField] GameObject clickUI;
+    [SerializeField] string Track_Name;
     public void GameSceneLoad()
     {
-
         StartCoroutine(LoadGameScene());
-
-        clickUI.SetActive(true);
-
     }
 
     public IEnumerator LoadGameScene()
@@ -21,7 +17,7 @@ public class ReStart : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1.5f);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Test_KM");
+        UnityEngine.SceneManagement.SceneManager.LoadScene($"{Track_Name}");
 
     }
 }

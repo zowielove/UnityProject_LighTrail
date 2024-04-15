@@ -14,7 +14,7 @@ public class EndPoint : MonoBehaviour
 
     private void Update()
     {
-        if ( speedUp == true )
+        if( speedUp == true )
         {
             player.transform.position = targetlocation.position;
         }
@@ -27,12 +27,12 @@ public class EndPoint : MonoBehaviour
             speedUp = true;
             playerCount++;
             speedUp = playerCount > 0;
-            Player playerScript = other.GetComponent<Player>();
+            Player playerScript = other.GetComponent<Player>();            
             playerScript.playerSpeed = 0;
-            if ( playerScript.playerSpeed == 0 )
+            if( playerScript.playerSpeed ==0)
             {
                 animator.SetBool("Goal", true);
-            }
+            }            
         }
     }
 }

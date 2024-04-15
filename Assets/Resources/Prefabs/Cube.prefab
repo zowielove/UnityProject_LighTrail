@@ -51,7 +51,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.07, z: 1}
+  m_Size: {x: 1, y: 0.2, z: 1}
   m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &2666928806973593782
 GameObject:
@@ -205,9 +205,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rendererToChangeMaterial: {fileID: 8542153377325876178}
-  collider: {fileID: 8387318592689328188}
-  material: {fileID: 2100000, guid: f8166a4bd5df1a34281551da46c92305, type: 2}
-  del: {fileID: 6998208037410999657, guid: 981744398f95e1e43858936cda283c98, type: 3}
+  collder: {fileID: 2959920900811944336}
+  material: {fileID: 2100000, guid: 1de402697b18ee344982a6db0ec950b0, type: 2}
   play: 0
 --- !u!1 &4771349483120973301
 GameObject:
@@ -260,5 +259,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.87, z: 1}
-  m_Center: {x: 0, y: -0.01, z: 0}
+  m_Size: {x: 1, y: 0.62, z: 1}
+  m_Center: {x: 0, y: -0.1, z: 0}
