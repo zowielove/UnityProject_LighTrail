@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : Singleton<SoundManager>
 {
+
+    public AudioMixer mixer;
+
     [SerializeField] AudioSource bgmSource;
     [SerializeField] AudioSource sfxSource;
 
