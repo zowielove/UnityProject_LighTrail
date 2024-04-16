@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Logo : MonoBehaviour
-{
-    
+public class AnimationSceneChange : MonoBehaviour
+{   
     [SerializeField] Animator m_Animator;
+    [SerializeField] string scene_Name;
 
     void Awake()
     {
@@ -13,6 +13,6 @@ public class Logo : MonoBehaviour
     }
     public void OnEnterNextScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("02.StageSelect");
+        UnityEngine.SceneManagement.SceneManager.LoadScene($"{scene_Name}");
     }
 }

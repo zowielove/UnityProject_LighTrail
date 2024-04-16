@@ -733,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 1897637046}
+  scene_Name: 02.StageSelect
 --- !u!1 &2129535082
 GameObject:
   m_ObjectHideFlags: 0

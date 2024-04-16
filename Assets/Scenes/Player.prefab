@@ -104,10 +104,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 3
+  additionalMoveSpeed: 0
   changeTime: 0
   jumpSpeed: 6
+  additionalJumpSpeed: 0
   rigid: {fileID: 8571845944463171613}
   trans: {fileID: 1973264466234062133}
+  actionCoolTime: 0.2
   leftTurnCheck:
     serializedVersion: 2
     m_Bits: 1024
@@ -132,7 +135,9 @@ MonoBehaviour:
   damageCheck:
     serializedVersion: 2
     m_Bits: 8192
-  actionCoolTime: 0.2
+  audiojump: {fileID: 0}
+  audiomove: {fileID: 0}
+  audioturn: {fileID: 0}
 --- !u!114 &664346117172672012
 MonoBehaviour:
   m_ObjectHideFlags: 0
