@@ -16,7 +16,7 @@ MonoBehaviour:
   - m_From: Virtual Camera1
     m_To: Virtual Camera2
     m_Blend:
-      m_Style: 0
+      m_Style: 3
       m_Time: 2
       m_CustomCurve:
         serializedVersion: 2
@@ -24,11 +24,44 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: Virtual Camera2
-    m_To: Virtual Camera1
+  - m_From: Virtual Camera 6
+    m_To: Virtual Camera 7
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 1
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Virtual Camera 6
+    m_To: Virtual Camera 8-1
+    m_Blend:
+      m_Style: 1
+      m_Time: 0
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Virtual Camera 8-1
+    m_To: Virtual Camera 8-2
+    m_Blend:
+      m_Style: 1
+      m_Time: 0
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Virtual Camera 8-2
+    m_To: Virtual Camera 8-3
+    m_Blend:
+      m_Style: 1
+      m_Time: 0
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
