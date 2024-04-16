@@ -45,7 +45,7 @@ public class Text_typing : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(1.5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("01.Title");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("01.Title_ver2");
 
     }
 
