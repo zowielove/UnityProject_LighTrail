@@ -901,6 +901,10 @@ PrefabInstance:
       value: 01.Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 4410729096841957735, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
+      propertyPath: m_margin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410729096841957735, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
       propertyPath: m_fontStyle
       value: 17
       objectReference: {fileID: 0}
@@ -1525,7 +1529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -73.35}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 721.71, y: 850}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751194946
@@ -2464,7 +2468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4410729096841957735, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
       propertyPath: m_text
-      value: 03.Tropical
+      value: 04.Sakura
       objectReference: {fileID: 0}
     - target: {fileID: 4410729096841957735, guid: 366e7a3da952e21459c96f18657b6c7a, type: 3}
       propertyPath: m_fontStyle
