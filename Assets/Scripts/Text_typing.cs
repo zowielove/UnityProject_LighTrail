@@ -18,16 +18,18 @@ public class Text_typing : MonoBehaviour
         
     }
 
-    IEnumerator Typing(string typing)
+
+    IEnumerator Typing( string typing )
     {
         teamname.text = null;
-        for(int i = 0; i< typing.Length; i++ )
+        for ( int i = 0; i < typing.Length; i++ )
         {
             teamname.text += typing [i];
             yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForSeconds(2f);
         StartCoroutine(FaFadeOut());
+
     }
 
     IEnumerator FaFadeOut()
@@ -42,6 +44,9 @@ public class Text_typing : MonoBehaviour
             teamname.color = Color.Lerp(fadeInColor, fadeOutColor, rate);
             yield return null;
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("01.Title");
+
     }
+
 }

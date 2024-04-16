@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/00.Logo.unity
+    guid: b732b058790cf1a488d4bf5cd6d4d990
+  - enabled: 1
+    path: Assets/Scenes/01.Title.unity
+    guid: 3a07d6f6828d6cb4fb3c065beca03294
+  - enabled: 1
     path: Assets/Scenes/02.StageSelect.unity
     guid: 160fa74b626d1a146bc81087ba338288
-  - enabled: 0
-    path: Assets/Scenes/Test_JB.unity
-    guid: dc17882497f70e848a7b87ebca2fe986
   - enabled: 1
     path: Assets/Scenes/03.Track_Tutorial.unity
     guid: 1e0b7ead33262394ab7b086e22f6654c
@@ -20,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/03.Track_Tropical.unity
     guid: 393881fe58155c24db9bd1cfa8152955
+  - enabled: 1
+    path: Assets/Scenes/03.Track_Sakura.unity
+    guid: 8ad960e5a5e515042b522419a5114078
   m_configObjects: {}
