@@ -9,6 +9,9 @@ public class Bgm : MonoBehaviour
 
     private void Start()
     {
+        // Manager.Sound.PlayBGM(BGM);
+        // Manager.Sound.BGMVolme = 0.5f;
+
         audioSource = GetComponent<AudioSource>();
         if ( audioSource == null )
         {
