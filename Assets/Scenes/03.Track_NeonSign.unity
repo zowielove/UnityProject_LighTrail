@@ -6426,6 +6426,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 763849936084815148, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8861833542375208633, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
       propertyPath: m_Name
       value: SpeedChange 5
@@ -8841,6 +8845,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 763849936084815148, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 763849936084815148, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8861833542375208633, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
       propertyPath: m_Name
       value: SpeedChange 3
@@ -43422,13 +43434,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 763849936084815148, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 763849936084815148, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8861833542375208633, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
       propertyPath: m_Name
       value: SpeedChange 4
       objectReference: {fileID: 0}
     - target: {fileID: 8985811875274002671, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8985811875274002671, guid: 2512cd798f174764b80bd064eace1a5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63685,7 +63705,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 11400000, guid: d4928e67a5449ae4495dafcade43f361, type: 2}
+  m_CustomBlends: {fileID: 11400000, guid: 7611130b70ba72343b97158822b89c29, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
