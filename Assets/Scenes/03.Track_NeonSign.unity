@@ -8896,8 +8896,8 @@ Transform:
   m_GameObject: {fileID: 290714796}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.29, y: 53.3247, z: -4.16}
-  m_LocalScale: {x: 7, y: 1, z: 20}
+  m_LocalPosition: {x: 34.29, y: 53.3247, z: -7.19}
+  m_LocalScale: {x: 7, y: 1, z: 13.457742}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065991501}
@@ -27070,7 +27070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666928806973593782, guid: e51a63d2089e70d478af12e498ddbb25, type: 3}
       propertyPath: m_Name
-      value: CubeCopySet (35)
+      value: BackCube
       objectReference: {fileID: 0}
     - target: {fileID: 2666928806973593782, guid: e51a63d2089e70d478af12e498ddbb25, type: 3}
       propertyPath: m_Layer
